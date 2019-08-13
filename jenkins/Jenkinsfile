@@ -11,5 +11,10 @@ pipeline {
                 sh '/Applications/maven3.6.1/bin/mvn package -Dmaven.test.skip=true'
             }
         }
+        stage('deploy') {
+            steps {
+                sh '/Applications/maven3.6.1/bin/mvn deploy -Dmaven.test.skip=true'
+            }
+        }
     }
 }
